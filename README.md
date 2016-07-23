@@ -101,7 +101,7 @@ Monarchy        +Can join UN            Conscription
 Combustion                              Spaceship, Atomic Theory        
 Steel                                   Spaceship, Atomic Theory
 Medicine        +40 max population      Spaceship
-Calculus        +50% research           Atomic Theory
+Calculus        +50% research           Spaceship, Atomic Theory
 Conscription    +Can estabish UN        Spaceship, Atomic Theory
 Spaceship       +You win                
 Atomic Theory
@@ -111,17 +111,17 @@ Flowchart:
 
 ```
 
- Astronomy----->Calculus----------------------------x-->Atomic Theory
-                                                   /
- Ironworking--->Steel----------------------x      /
-                                            \    /
- Money--------->Monarchy---->Conscription----x--x
-                                            /    \
- Wheel-------x->Combustion-----------------x      \
-            /                                      \
- Chemistry-/                                        \
-                                                     \
- Farming------->Medicine------------------------------x-->Spaceship
+ Ironworking--->Steel----------------------x         
+                                            \        
+ Money--------->Monarchy---->Conscription----x----x--->Atomic Theory
+                                            /      \ 
+ Wheel-------x->Combustion-----------------x        \
+            /                             /          \
+ Chemistry-/                             /            \
+                                        /              \
+ Astronomy----->Calculus---------------x                \
+                                                         \
+ Farming------->Medicine----------------------------------x->Spaceship
 ```
 
 ###### Units
