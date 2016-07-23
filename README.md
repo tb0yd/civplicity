@@ -97,7 +97,7 @@ Farming         +200% Nutrients         Medicine
 Ironworking                             Steel                        
 Chemistry       +25% Nutrients          Medicine, Combustion           
 Astronomy       +Can build Boat         Calculus                        
-Monarchy        +Can join UN            Conscription                    
+Monarchy        +Can be Monarchy        Conscription                    
 Combustion                              Spaceship, Atomic Theory        
 Steel                                   Spaceship, Atomic Theory
 Medicine        +40 max population      Spaceship
