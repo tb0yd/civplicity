@@ -85,10 +85,65 @@ Ally with peaceful players, establish the UN, and perform peacekeeping missions 
 
 You: +2 points, everyone else in the UN: 1 point.
 
-###### Game stages:
+###### Tech tree
+
+Table:
+
+```
+Tech            Bonus                   Required for                    
+Money                                   Monarchy                       
+Wheel                                   Combustion                    
+Farming         +200% Nutrients         Medicine                       
+Ironworking                             Steel                        
+Chemistry       +25% Nutrients          Medicine, Combustion           
+Astronomy       +Can build Boat         Calculus                        
+Monarchy        +Can join UN            Conscription                    
+Combustion                              Spaceship, Atomic Theory        
+Steel                                   Spaceship, Atomic Theory
+Medicine        +40 max population      Spaceship
+Calculus        +50% research           Atomic Theory
+Conscription    +Can estabish UN        Spaceship, Atomic Theory
+Spaceship       +You win                
+Atomic Theory
+```
+
+Flowchart:
+
+```
+
+ Astronomy----->Calculus----------------------------x-->Atomic Theory
+                                                   /
+ Ironworking--->Steel----------------------x      /
+                                            \    /
+ Money--------->Monarchy---->Conscription----x--x
+                                            /    \
+ Wheel-------x->Combustion-----------------x      \
+            /                                      \
+ Chemistry-/                                        \
+                                                     \
+ Farming------->Medicine------------------------------x-->Spaceship
+
+###### Units
+
+Unit selection is smaller:
+
+```
+Unit                    Techs required
+Archer                  (None)
+Chariot                 Farming, Wheel
+Swordsman               Ironworking
+Boat                    Astronomy
+Infantry                Conscription
+Cavalry                 Conscription, Farming, Wheel
+Tank                    Conscription, Steel, Combustion
+Gunship                 Conscription, Steel, Astronomy
+Nuke                    Atomic Theory
+
+###### AI
 
 Stage 1: Conquerors, Space Racers, Diplomats, and Culturers are expanding and defending. Dominators are getting ready for war.
 
 Stage 2: UN is established, probably by a Diplomat. Culturers are eager to get on board. Legendary cities start appearing, and Conquerors and Space Racers fight over for them. Dominators and Culturers fight for the seas.
 
 Stage 3: Someone, probably a Conqueror, Diplomat, or Culturer, has nukes. Conquerors go after the weak first, and Culturers go after the strong first. Diplomats are faithful to UN members who vote for them. Dominators are opportunists and often break treaties. Space Racers don't have nukes, so they stay out of it and defend their cities. Diplomats try and ally with Dominators, Space Racers and weak civs to rush a UN vote.
+
