@@ -141,6 +141,26 @@ Gunship                 Conscription, Steel, Astronomy
 Nuke                    Atomic Theory
 ```
 
+###### Intelligence
+
+Your information on other players in the game world is limited to the following:
+
+- Which player a unit belongs to
+- Which player a city belongs to
+- Population of cities on your map
+- Names of legendary cities (even if they aren't on your map)
+- Government type of each player
+- Your diplomatic relations with each player
+- If the UN is established, who the members are
+
+Notice that this does not include:
+
+- Capitol cities (though this is sometimes obvious if using a historical preset)
+- Military/civilian balance for a city
+- Culture level of a city
+- Diplomatic relations with other players
+- If they have nukes
+
 ###### AI
 
 Stage 1: Conquerors, Space Racers, Diplomats, and Culturers are expanding and defending. Dominators are getting ready for war.
