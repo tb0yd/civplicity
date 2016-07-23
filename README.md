@@ -122,6 +122,7 @@ Flowchart:
  Chemistry-/                                        \
                                                      \
  Farming------->Medicine------------------------------x-->Spaceship
+```
 
 ###### Units
 
@@ -138,6 +139,7 @@ Cavalry                 Conscription, Farming, Wheel
 Tank                    Conscription, Steel, Combustion
 Gunship                 Conscription, Steel, Astronomy
 Nuke                    Atomic Theory
+```
 
 ###### AI
 
