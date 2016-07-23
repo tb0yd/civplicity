@@ -200,5 +200,5 @@ Stage 1: Conquerors, Space Racers, Diplomats, and Culturers are expanding and de
 
 Stage 2: UN is established, probably by a Diplomat. Culturers are eager to get on board. Legendary cities start appearing, and Conquerors and Space Racers fight over for them. Dominators and Culturers fight for the seas.
 
-Stage 3: Someone, probably a Conqueror, Diplomat, or Culturer, has nukes. Conquerors go after the weak first, and Culturers go after the strong first. Diplomats are faithful to UN members who vote for them. Dominators are opportunists and often break treaties. Space Racers don't have nukes, so they stay out of it and defend their cities. Diplomats try and ally with Dominators, Space Racers and weak civs to rush a UN vote.
+Stage 3: Someone, probably a Conqueror, Diplomat, or Culturer, has nukes. Conquerors go after the weak first, and Culturers go after the strong first. Diplomats are as aggressive as possible without declaring war on UN members. Dominators are opportunists and often break treaties. Space Racers never get nukes, so they just defend their cities. Diplomats try and ally with Dominators, Space Racers and weak civs to rush a UN vote.
 
