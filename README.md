@@ -45,6 +45,8 @@ You must be a Monarchy to participate in the UN. You must have Conscription to e
 
 If a civ declares war on any UN civ, it automatically gets removed from the UN until peace is restored.
 
+Combat is not an automatic declaration of war. Sieging a city is.
+
 The UN is dissolved if the world population within the UN falls below 50%.
 
 The UN cannot be reconvened until 25 years passes after it dissolves. Like other civ games, each successive turn lasts a shorter number of years.
