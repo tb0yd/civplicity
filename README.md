@@ -57,33 +57,66 @@ There is only one possible UN vote: whether or not to end the game.
 
 1) Conquest
 
+Destroy all other civs to win.
+
 Simply put, get nukes before anyone else and nuke your enemies into oblivion.
 
-You: +2 points, everyone else: 0 points
+Points assigned:
+
+```
++2 You
+```
 
 2) Space Race
 
-Always make sure you hold the city with the highest population worldwide. Get the Spaceship tech.
+Get the Spaceship tech.
 
-You: +2 points, everyone else: 0 points
+Always make sure you hold the city with the highest population worldwide.
+
+Points assigned:
+
+```
++2 You
+```
 
 3) Domination
 
+Conquer capitol cities of all others players while stil having your capitol.
+
 Produce lots of cities and units. Conquer a capital, propose peace with the civ. Rinse, repeat.
 
-You: +2 points, everyone else alive: 1 point.
+Points assigned:
+
+```
++2 You
++1 Alive players
+```
 
 4) Culture
 
+Produce 3 Legendary cities.
+
 Stay at peace with neighbors at all costs. Seek out peninsulas and islands for culture centers and maintain naval dominance.
 
-You: +2 points, everyone else alive: 1 points.
+Points assigned:
+
+```
++2 You
++1 Alive players
+```
 
 5) Diplomacy
 
+Be the UN Chairman when the UN votes to end the game.
+
 Ally with peaceful players, establish the UN, perform peacekeeping missions, and call votes when the game gets nukey.
 
-You: +2 points, everyone else in the UN: 1 point.
+Points assigned:
+
+```
++2 You
++1 UN members
+```
 
 ###### Tech tree
 
