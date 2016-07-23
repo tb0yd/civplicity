@@ -81,7 +81,7 @@ You: +2 points, everyone else alive: 1 points.
 
 5) Diplomacy
 
-Ally with peaceful players, establish the UN, and perform peacekeeping missions (meaning roam the world and fight treaty-breakers).
+Ally with peaceful players, establish the UN, perform peacekeeping missions, and call votes when the game gets nukey.
 
 You: +2 points, everyone else in the UN: 1 point.
 
