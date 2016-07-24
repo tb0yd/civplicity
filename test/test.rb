@@ -128,6 +128,24 @@ def test(rules: :pick)
     end
     print
   end
+
+  test = test_game rules: :all, name: :enemy_city
+  test.instance_eval do
+    init
+
+    tile = get_tile(:B1)
+    tile.units += [Unit.new({type: :Settler, player: tile.start}, tile.id)]
+    save_tile(tile)
+
+    turn
+
+    settler = select_units_in_tile(:B1, 1)[1]
+    create_city(settler)
+
+    turn
+
+    print
+  end
 end
 
 def test_game(world: :simplest, rules: :all, name: :blank)
@@ -173,15 +191,18 @@ def test_game(world: :simplest, rules: :all, name: :blank)
     end
 
     def print
-      str = "World:   "
+      str = "World:      "
       PP.singleline_pp $world, str
       puts str.cyan
-      str = "Players: "
+      str = "KnownWorld: "
+      str += KnownWorld.new(0).to_s
+      puts str.cyan
+      str = "Players:    "
       PP.singleline_pp $players, str
       puts str.cyan
-      str = "Year:     #{$year}"
+      str = "Year:       #{$year}"
       puts str.green
-      str = "Turn:     #{$turns}"
+      str = "Turn:       #{$turns}"
       puts str.green
     end
   end

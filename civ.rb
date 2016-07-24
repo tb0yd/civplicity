@@ -19,6 +19,7 @@ require './rules/culture.rb'
 require './rules/diplomacy.rb'
 require './rules/production.rb'
 require './rules/research.rb'
+require './rules/known_world.rb'
 
 require './test/test.rb'
 

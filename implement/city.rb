@@ -62,6 +62,10 @@ module Implement
     def is_legendary?
       @city[:culture] >= 20_000
     end
+
+    def name
+      @city[:name]
+    end
   end
 end
 
