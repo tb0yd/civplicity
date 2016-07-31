@@ -24,6 +24,18 @@ module Implement
       @player[:tech_target] = t
     end
 
+    def tech_goal
+      if @player[:tech_goal]
+        Tech.new($techs[@player[:tech_goal].to_sym], @player[:tech_goal].to_sym)
+      else
+        get_tech(:Spaceship)
+      end
+    end
+
+    def tech_goal=(t)
+      @player[:tech_goal] = t
+    end
+
     def government=(g)
       @player[:government] = g
     end
@@ -50,6 +62,10 @@ module Implement
 
     def relations=(r)
       @player[:relations] = r
+    end
+
+    def has_tech?(tech)
+      @player[:techs].include?(tech.name)
     end
   end
 

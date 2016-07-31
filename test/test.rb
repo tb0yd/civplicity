@@ -158,6 +158,24 @@ def test(rules: :pick)
     end
     print
   end
+
+  test = test_game rules: :research_only, name: :space_race_victory
+  test.instance_eval do
+    init
+    for_each_tile_in_world do |tile|
+      if tile.id == :A1
+        tile.units += [Unit.new({type: :Settler, player: tile.start}, tile.id)]
+      elsif tile.id == :B1
+        tile.units += [Unit.new({type: :Archer, player: tile.start}, tile.id)]
+      end
+    end
+    settler = select_units_in_tile(:A1, 0)[0]
+    create_city(settler)
+    while test_for_victory == nil
+      turn
+    end
+    print
+  end
 end
 
 def test_game(world: :simplest, rules: :all, name: :blank)

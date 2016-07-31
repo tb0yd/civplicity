@@ -23,6 +23,12 @@ module Implement
     end
   end
 
+  def for_each_tech
+    $techs.each do |name, tech|
+      yield Tech.new(tech, name)
+    end
+  end
+
   def get_targeted_tech(player)
     player.tech_target
   end
@@ -132,6 +138,10 @@ module Implement
 
   def get_tile(tile)
     Tile.new($world[tile], tile)
+  end
+
+  def get_tech(name)
+    Tech.new($techs[name], name)
   end
 
   def flag_unit_for_promotion(unit)

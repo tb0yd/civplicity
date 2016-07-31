@@ -113,7 +113,9 @@ module Civplicity
 
   def test_for_victory
     conquest = nil
+    research = nil
 
+    # test for conquest
     players_vanquished = {}
     for_each_player do |player|
       players_vanquished[player.id] = true
@@ -133,8 +135,17 @@ module Civplicity
       conquest = players_vanquished.select { |k,v| v == false }.keys[0]
     end
 
+    # test for space race
+    for_each_player do |player|
+      if player.techs.include?(:Spaceship)
+        research = player.id
+      end
+    end
+
     if conquest
       return {conquest: conquest}
+    elsif research
+      return {research: research}
     end
 
     nil
