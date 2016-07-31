@@ -146,6 +146,18 @@ def test(rules: :pick)
 
     print
   end
+
+  test = test_game rules: :combat_only, name: :conquest_victory
+  test.instance_eval do
+    init
+    archer = select_units_in_tile(:A1, 0)[0]
+    while test_for_victory == nil
+      move_unit_to_tile(archer, :B1)
+      turn
+      turn
+    end
+    print
+  end
 end
 
 def test_game(world: :simplest, rules: :all, name: :blank)

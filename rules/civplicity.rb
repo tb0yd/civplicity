@@ -110,6 +110,35 @@ module Civplicity
     unit.tile_id = tile_id
     save_unit(unit)
   end
+
+  def test_for_victory
+    conquest = nil
+
+    players_vanquished = {}
+    for_each_player do |player|
+      players_vanquished[player.id] = true
+    end
+
+    for_each_tile_in_world do |tile|
+      unless tile.units.empty?
+        tile.units.each do |unit|
+          players_vanquished[unit.player] = false
+        end
+      end
+
+      players_vanquished[tile.city.player_id] = false if tile.city
+    end
+
+    if players_vanquished.select { |k,v| v == false }.keys.size < 2
+      conquest = players_vanquished.select { |k,v| v == false }.keys[0]
+    end
+
+    if conquest
+      return {conquest: conquest}
+    end
+
+    nil
+  end
 end
 
 

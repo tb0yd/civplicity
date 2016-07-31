@@ -12,12 +12,18 @@ module Combat
   end
 
   def move_unit_to_tile_for_combat(unit, tile_id)
-    if opponents = get_opponent_units(tile_id)
+    opponents = get_opponent_units(tile_id)
+    unless opponents.empty?
       opponent = choose_opponent_fairly(unit, opponents)
       outcome = challenge_opponent(unit, opponent)
 
       if outcome == :win
         destroy_unit(opponent)
+
+        destroy_unit(unit)
+        unit.new_tile_id = opponent.tile
+        save_unit(unit)
+
         flag_unit_for_promotion(unit)
 
         if get_opponent_units(tile_id)
