@@ -1,6 +1,11 @@
 module Research
   def end_turn_for_research
     player = get_current_player()
+
+    if player.tech_target.nil?
+      player.tech_target = choose_next_tech_target(player)
+    end
+
     tech_target = get_targeted_tech(player)
 
     research_city = get_research_center_city(player)

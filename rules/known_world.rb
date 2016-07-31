@@ -70,9 +70,9 @@ class KnownWorld
 
     for_each_tile_in_world do |tile|
       if is_visible?(tile.id)
-        hash[tile.id] = tile.tile
-        hash[tile.id][:units] = units_on_tile(tile.id)
-        hash[tile.id][:city] = city_on_tile(tile.id) if city_on_tile(tile.id)
+        hash[tile.id] = tile.tile.clone
+        hash[tile.id][:units] = units_on_tile(tile.id).map(&:clone)
+        hash[tile.id][:city] = city_on_tile(tile.id).clone if city_on_tile(tile.id)
       end
     end
 
