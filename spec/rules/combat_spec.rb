@@ -8,20 +8,21 @@ describe Combat do
 
   let(:unit) { Struct.new(:player, :type, :rank, :tile) }
   let(:with_city) { double(has_city?: true) }
+  let(:without_city) { double(has_city?: false) }
 
-  let(:friendly_settler) { unit.new(0, :Settler, nil, nil) }
-  let(:friendly_archer) { unit.new(0, :Archer, nil, nil) }
-  let(:friendly_veteran_archer) { unit.new(0, :Archer, :Veteran, nil) }
-  let(:friendly_tank) { unit.new(0, :Tank, nil, nil) }
+  let(:friendly_settler) { unit.new(0, :Settler, nil, without_city) }
+  let(:friendly_archer) { unit.new(0, :Archer, nil, without_city) }
+  let(:friendly_veteran_archer) { unit.new(0, :Archer, :Veteran, without_city) }
+  let(:friendly_tank) { unit.new(0, :Tank, nil, without_city) }
   let(:friendly_archer_in_city) { unit.new(0, :Archer, nil, with_city) }
-  let(:friendly_infantry) { unit.new(0, :Infantry, nil, nil) }
+  let(:friendly_infantry) { unit.new(0, :Infantry, nil, without_city) }
 
-  let(:enemy_settler) { unit.new(1, :Settler, nil, nil) }
-  let(:enemy_archer) { unit.new(1, :Archer, nil, nil) }
-  let(:enemy_veteran_archer) { unit.new(1, :Archer, :Veteran, nil) }
-  let(:enemy_tank) { unit.new(1, :Tank, nil, nil) }
+  let(:enemy_settler) { unit.new(1, :Settler, nil, without_city) }
+  let(:enemy_archer) { unit.new(1, :Archer, nil, without_city) }
+  let(:enemy_veteran_archer) { unit.new(1, :Archer, :Veteran, without_city) }
+  let(:enemy_tank) { unit.new(1, :Tank, nil, without_city) }
   let(:enemy_archer_in_city) { unit.new(1, :Archer, nil, with_city) }
-  let(:enemy_infantry) { unit.new(1, :Infantry, nil, nil) }
+  let(:enemy_infantry) { unit.new(1, :Infantry, nil, without_city) }
 
   describe "#quality_of_defense" do
     it "is 0 for no opponent" do
@@ -103,6 +104,33 @@ describe Combat do
       ].any?
 
       expect(any).to be false
+    end
+  end
+
+  describe "#challenge_opponent" do
+    it "is always within [:win, :lose, :draw]" do
+      units = [
+        friendly_settler,
+        friendly_archer,
+        friendly_veteran_archer,
+        friendly_tank,
+        friendly_archer_in_city,
+        friendly_infantry
+      ]
+
+      enemies = [
+        enemy_settler,
+        enemy_archer,
+        enemy_veteran_archer,
+        enemy_tank,
+        enemy_archer_in_city,
+        enemy_infantry
+      ]
+
+      1_000.times do
+        res = challenge_opponent(units.sample, enemies.sample)
+        expect([:win, :lose, :draw]).to include(res)
+      end
     end
   end
 end
