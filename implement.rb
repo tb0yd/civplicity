@@ -106,7 +106,7 @@ module Implement
   end
 
   def is_conscripted_type?(unit)
-    $units[unit.type][:prerequisites].include?(:Conscription)
+    $units[unit.type][:prerequisites].include?('Conscription')
   end
 
   def players_are_at_peace?(p1, p2)

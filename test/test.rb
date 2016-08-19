@@ -1,4 +1,4 @@
-def test(rules: :pick)
+def integration_tests(rules: :pick)
   test = test_game rules: :combat_only, name: :shots_fired
   test.instance_eval do
     init

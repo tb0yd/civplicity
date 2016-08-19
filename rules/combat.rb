@@ -58,11 +58,11 @@ module Combat
   end
 
   def choose_opponent_fairly(unit, opponents)
-    sorted = opponents.sort_by do |o1, o2|
-      quality_of_defense(unit, o1) <=> quality_of_defense(unit, o2)
+    sorted = opponents.sort_by do |opponent|
+      quality_of_defense(unit, opponent)
     end
 
-    sorted.first
+    sorted.last
   end
 
   def is_unlosable_challenge?(unit, opponent)
