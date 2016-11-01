@@ -1,6 +1,9 @@
 require 'pp'
+require File.join(File.dirname(__FILE__), './world.rb')
 
 class KnownWorld
+  include World
+
   def initialize(player)
     @player = player
 
@@ -9,11 +12,9 @@ class KnownWorld
 
   def is_visible?(tile_id)
     tile_id = tile_id.to_s.chars
-    tile_id = [tile_id[0], tile_id[1..-1].join("")]
+    tile_id = [tile_id[0], tile_id[1..-1].join("")].join.to_sym
 
-    surrounding_tiles = (tile_id[0].ord-1..tile_id[0].ord+1).map(&:chr).product(
-      (tile_id[1].to_i-1..tile_id[1].to_i+1).map(&:to_s)).map(&:join).map(&:to_sym)
-
+    surrounding_tiles = tiles_surrounding_tile_id(tile_id)
     surrounding_tiles.any? do |id|
       @units[id] || @cities[id]
     end

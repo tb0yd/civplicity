@@ -14,11 +14,15 @@ module Civplicity
   def init_game_for_research
   end
 
-  def init_game
+  def init_default_world
     $world = {
-      A1: {N: 8, M: 6, start: 0},
-      B1: {N: 6, M: 8, start: 1}
+      A1: {N: 8, M: 6, start: 0, type: :land},
+      B1: {N: 6, M: 8, start: 1, type: :land}
     }
+  end
+
+  def init_game(world = nil)
+    init_default_world if world.nil?
 
     $turn = 0
     $turns = 0
@@ -101,8 +105,6 @@ module Civplicity
   end
 
   def move_unit_to_tile(unit, tile_id)
-    unit.moves -= 1
-
     if move_unit_to_tile_for_combat(unit, tile_id) == :return
       return
     end

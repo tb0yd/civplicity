@@ -39,6 +39,10 @@ module Implement
     def city=(c)
       @tile[:city] = c.city
     end
+
+    def is_land?
+      @tile[:type] == :land
+    end
   end
 
 end

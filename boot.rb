@@ -5,6 +5,7 @@ require 'pp'
 
 require './core_ext/array.rb'
 
+require './implement/action.rb'
 require './implement/city.rb'
 require './implement/player.rb'
 require './implement/proposition.rb'
@@ -19,5 +20,6 @@ require './rules/culture.rb'
 require './rules/diplomacy.rb'
 require './rules/production.rb'
 require './rules/research.rb'
+require './rules/world.rb'
 require './rules/known_world.rb'
 

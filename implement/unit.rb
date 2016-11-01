@@ -1,12 +1,25 @@
 module Implement
 
   class Unit
-    attr_accessor :unit, :tile, :moves, :new_tile_id, :minerals_needed
+    attr_accessor :unit, :tile, :new_tile_id, :minerals_needed
 
     def initialize(u, t)
       @unit = u.respond_to?(:unit) ? u.unit : u
       @tile = t
-      @moves = $units[@unit[:type]][:moves]
+
+      refresh_moves if @unit[:moves].nil?
+    end
+
+    def refresh_moves
+      @unit[:moves] = $units[@unit[:type]][:moves]
+    end
+
+    def has_move?
+      @unit[:moves] > 0
+    end
+
+    def use_move
+      @unit[:moves] -= 1
     end
 
     def player

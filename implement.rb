@@ -67,6 +67,11 @@ module Implement
         city.grow
         save_city(city)
       end
+
+      tile.units.each do |unit|
+        unit.refresh_moves
+        save_tile(tile)
+      end
     end
 
     $turn += 1
@@ -132,12 +137,17 @@ module Implement
 
   def save_unit(unit)
     if unit.new_tile_id
+      $world[unit.tile][:units] -= [unit.unit]
+      unit.use_move
+      $world[unit.new_tile_id][:units] ||= []
       $world[unit.new_tile_id][:units] += [unit.unit]
     end
   end
 
   def get_tile(tile)
-    Tile.new($world[tile], tile)
+    t = Tile.new($world[tile], tile)
+    raise "Tile #{tile} not found. World: #{$world}" if t.tile.nil?
+    t
   end
 
   def get_tech(name)
@@ -208,4 +218,7 @@ module Implement
     {type: :Archer, player: city.player_id}
   end
 
+  def get_year
+    $year
+  end
 end
